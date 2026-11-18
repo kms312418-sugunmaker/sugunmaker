@@ -110,7 +110,8 @@
       "closes": "18:00"
     },
     "sameAs": [
-      "https://smartstore.naver.com/maker4082"
+      "https://smartstore.naver.com/maker4082",
+      "https://blog.naver.com/dlrjek3124"
     ],
     "description": "세종특별자치시 조치원읍에 위치한 주식회사 수건메이커입니다. 개업 선물, 돌답례품, 기업·병원·학교 단체기념품 등으로 수건 자수 및 인쇄 제작이 가능한 업체입니다. 송월타월, 무한타올, 충무타올 공식 총판 대리점으로 최첨단 컴퓨터 자수 설비와 정밀 인쇄 시스템을 보유하고 있습니다.",
     "disambiguatingDescription": "개업 선물, 돌답례품, 기업·병원·학교 단체기념품 등으로 수건 자수 및 인쇄 제작이 가능한 세종시 수건 전문 업체",
@@ -286,7 +287,11 @@
         </a>
         <span class="text-brand-600">|</span>
         <a href="https://smartstore.naver.com/maker4082" target="_blank" rel="noopener noreferrer" class="hover:text-white flex items-center gap-1 text-emerald-400 font-medium">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> 네이버 스마트스토어 바로가기 ↗
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> 스마트스토어 ↗
+        </a>
+        <span class="text-brand-600 hidden sm:inline">|</span>
+        <a href="https://blog.naver.com/dlrjek3124" target="_blank" rel="noopener noreferrer" class="hover:text-white hidden sm:flex items-center gap-1 text-amber-300 font-medium">
+          <i data-lucide="book-open" class="w-3.5 h-3.5"></i> 제작후기 블로그 ↗
         </a>
       </div>
     </div>
@@ -355,6 +360,10 @@
           <a href="https://smartstore.naver.com/maker4082" target="_blank" rel="noopener noreferrer" 
              class="w-full text-center py-2.5 rounded-lg text-sm font-semibold text-emerald-800 bg-emerald-100">
             네이버 스마트스토어 방문 ↗
+          </a>
+          <a href="https://blog.naver.com/dlrjek3124" target="_blank" rel="noopener noreferrer" 
+             class="w-full text-center py-2.5 rounded-lg text-sm font-semibold text-brand-800 bg-brand-100 border border-brand-200">
+            네이버 블로그 (제작 후기) ↗
           </a>
           <a href="#inquiry" class="mobile-nav-link w-full text-center py-2.5 rounded-lg text-sm font-semibold text-white bg-brand-800">
             온라인 맞춤 견적 문의하기
@@ -1333,10 +1342,14 @@
             검증된 브랜드 정품 타월 및 프리미엄 호텔식 타월과 함께 
             최신 컴퓨터 자수 설비로 세상에 단 하나뿐인 소중한 마음을 전합니다.
           </p>
-          <div class="pt-2 flex items-center gap-3">
+          <div class="pt-2 flex flex-wrap items-center gap-2.5">
             <a href="https://smartstore.naver.com/maker4082" target="_blank" rel="noopener noreferrer" 
                class="px-3 py-1.5 rounded-lg bg-emerald-600/30 text-emerald-300 border border-emerald-500/30 text-xs font-semibold hover:bg-emerald-600 hover:text-white transition-all">
               스마트스토어 maker4082 ↗
+            </a>
+            <a href="https://blog.naver.com/dlrjek3124" target="_blank" rel="noopener noreferrer" 
+               class="px-3 py-1.5 rounded-lg bg-amber-600/25 text-amber-200 border border-amber-500/30 text-xs font-semibold hover:bg-amber-600 hover:text-white transition-all">
+              네이버 블로그 (제작 후기) ↗
             </a>
           </div>
         </div>
@@ -1552,6 +1565,16 @@
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
           'event': 'store_outbound_click',
+          'destination_url': link.href
+        });
+      });
+    });
+
+    document.querySelectorAll('a[href*="blog.naver.com"]').forEach(link => {
+      link.addEventListener('click', () => {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'blog_outbound_click',
           'destination_url': link.href
         });
       });
